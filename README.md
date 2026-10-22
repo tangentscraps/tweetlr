@@ -27,6 +27,36 @@ The seed data is the charming part: `cfg/create-db.sql` pre-loads users
 tweets that are famous quotes — the tea-poisoning exchange between nancy and
 winston, "The first principle is that you must not fool yourself…", etc.
 
+## Running it (from the original README.org)
+
+Tweetlr is an open-source social media experience for hipsters on the go.
+It's also a tiny twitter clone made in php with the Silex microframework.
+
+The `app` directory contains all the logic for the application, and `cfg`
+contains everything that has to be installed on the machine to set it up.
+
+Tweetlr is supplied as a [vagrant](http://vagrantup.com/) appliance, so once
+you have vagrant installed, you can create and provision a virtual machine
+with:
+
+```
+vagrant up
+```
+
+Then just point your browser at http://localhost:8080/
+
+To log in:
+
+| username: | tweetlr |
+| password: | passwd  |
+
+Should you for any reason tire of the social media experience, you can remove
+all traces of it from your machine by typing:
+
+```
+vagrant destroy
+```
+
 ## Tech stack
 
 - **Backend:** PHP 5, **Silex** microframework (Symfony's micro-kernel, the
@@ -47,7 +77,7 @@ winston, "The first principle is that you must not fool yourself…", etc.
 
 | Path | Contents |
 |------|----------|
-| `README.org` | One page: what it is, `vagrant up`, login creds, `vagrant destroy` |
+| `README.org` | The original one-page readme (what it is, `vagrant up`, login creds, `vagrant destroy`) — merged into this file 2026-10-22, see "Running it" above |
 | `app/index.php` | The whole app bootstrap: providers, firewall, routes, dev helpers |
 | `app/lib/Tweetlr/TweetController.php` | Routes: `/`, `/tweet` (POST), `/by/<username>` |
 | `app/lib/Tweetlr/TweetControllerProvider.php` | Mounts the controller on `/` |
